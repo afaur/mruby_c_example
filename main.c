@@ -18,12 +18,12 @@ int main(void)
   // Open mrb
   mrb_state *mrb = mrb_open();
 
-  // Setup my_c_method to be used in example.rb by calling
+  // Setup my_c_method to be used in mruby_code.rb by calling
   // MyModule::my_c_method()
   struct RClass *mymodule = mrb_define_module(mrb, "MyModule");
   mrb_define_class_method(mrb, mymodule, "my_c_method", my_c_method, MRB_ARGS_NONE());
 
-  // Run sqlite3 gem init so we can use it in example.rb
+  // Run sqlite3 gem init so we can use it in mruby_code.rb
   mrb_mruby_sqlite3_gem_init(mrb);
 
   // Read mruby_code.rb in and run it
