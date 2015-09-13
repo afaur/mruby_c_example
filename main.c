@@ -6,7 +6,7 @@
 
 #include <mruby.h>
 #include <mruby/compile.h>
-#include "mrb_sqlite3.h"
+#include "lib/c_gems/mrb_sqlite3.h"
 
 static mrb_value my_c_method(mrb_state *mrb, mrb_value value)
 {
@@ -36,7 +36,7 @@ int main(void)
   mrb_mruby_sqlite3_gem_init(mrb);
 
   // Read mruby_code.rb in and run it
-  FILE *f = fopen("mruby_code.rb", "r");
+  FILE *f = fopen("lib/mruby_code.rb", "r");
   mrb_load_file(mrb, f);
 
   // Close mrb

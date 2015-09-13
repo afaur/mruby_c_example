@@ -1,3 +1,6 @@
+puts "Commands are:"
+puts "add, exit, or list"
+
 db = SQLite3::Database.new('db/foo.db')
 continue = true
 while continue
